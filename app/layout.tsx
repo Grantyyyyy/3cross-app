@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://3cross-apps.example.com"),
+  metadataBase: new URL("https://buffalobuiltusa.com"),
   title: {
     default: "3Cross App Catalog",
     template: "%s · 3Cross",
