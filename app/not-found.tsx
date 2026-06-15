@@ -12,7 +12,7 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-sm font-medium text-white shadow-subtle transition hover:bg-ink-soft"
+        className="group mt-8 inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-sm font-medium text-canvas shadow-subtle transition hover:bg-ink-soft"
       >
         Back to catalog
         <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">

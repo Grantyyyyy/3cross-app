@@ -90,7 +90,7 @@ export default async function AppDetailPage({
                   href={app.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-sm font-medium text-white shadow-subtle transition hover:bg-ink-soft"
+                  className="group inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-sm font-medium text-canvas shadow-subtle transition hover:bg-ink-soft"
                 >
                   Launch app
                   <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
@@ -159,7 +159,7 @@ export default async function AppDetailPage({
               {app.techStack.map((tech) => (
                 <li
                   key={tech}
-                  className="rounded-lg border border-ink/[0.08] bg-white px-2.5 py-1 font-mono text-[12px] text-ink-soft"
+                  className="rounded-lg border border-ink/[0.08] bg-surface px-2.5 py-1 font-mono text-[12px] text-ink-soft"
                 >
                   {tech}
                 </li>
@@ -167,7 +167,7 @@ export default async function AppDetailPage({
             </ul>
           </div>
 
-          <dl className="rounded-2xl border border-ink/[0.08] bg-white p-5 shadow-subtle">
+          <dl className="rounded-2xl border border-ink/[0.08] bg-surface p-5 shadow-subtle">
             <Row label="Status">
               <StatusBadge status={app.status} />
             </Row>

@@ -59,7 +59,7 @@ export default function AboutPage() {
       <div className="mt-14">
         <Link
           href="/"
-          className="group inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-sm font-medium text-white shadow-subtle transition hover:bg-ink-soft"
+          className="group inline-flex items-center gap-2 rounded-xl bg-ink px-5 py-2.5 text-sm font-medium text-canvas shadow-subtle transition hover:bg-ink-soft"
         >
           Browse the catalog
           <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">

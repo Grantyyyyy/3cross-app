@@ -8,7 +8,7 @@ export default function AppCard({ app }: { app: AppEntry }) {
   return (
     <Link
       href={`/apps/${app.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-ink/[0.08] bg-white shadow-subtle transition-all duration-300 ease-out hover:-translate-y-1 hover:border-ink/[0.12] hover:shadow-lift"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-ink/[0.08] bg-surface shadow-subtle transition-all duration-300 ease-out hover:-translate-y-1 hover:border-ink/[0.12] hover:shadow-lift"
     >
       {/* Preview */}
       <div className="relative overflow-hidden">

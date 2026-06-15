@@ -4,6 +4,21 @@
 
 :root {
   color-scheme: light;
+  /* Space-separated RGB channels so Tailwind can apply alpha (`ink/[0.06]`). */
+  --canvas: 255 255 255;
+  --surface: 255 255 255;
+  --ink: 10 10 11;
+  --ink-soft: 28 28 31;
+  --ink-muted: 82 82 91;
+}
+
+.dark {
+  color-scheme: dark;
+  --canvas: 9 9 11;
+  --surface: 24 24 27;
+  --ink: 245 245 246;
+  --ink-soft: 212 212 216;
+  --ink-muted: 148 148 158;
 }
 
 @layer base {
@@ -14,18 +29,18 @@
   }
 
   body {
-    @apply bg-white text-ink;
+    @apply bg-canvas text-ink;
     font-feature-settings: "ss01", "cv01", "cv03";
   }
 
   ::selection {
-    background: #0a0a0b;
-    color: #fff;
+    background: rgb(var(--ink));
+    color: rgb(var(--canvas));
   }
 
   /* Refined focus ring */
   *:focus-visible {
-    @apply outline-none ring-2 ring-ink/15 ring-offset-2 ring-offset-white;
+    @apply outline-none ring-2 ring-ink/15 ring-offset-2 ring-offset-canvas;
   }
 }
 
@@ -45,7 +60,7 @@
   }
   /* Faint dotted texture for the hero backdrop */
   .bg-dots {
-    background-image: radial-gradient(rgba(10, 10, 11, 0.06) 1px, transparent 1px);
+    background-image: radial-gradient(rgb(var(--ink) / 0.06) 1px, transparent 1px);
     background-size: 22px 22px;
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
     mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);

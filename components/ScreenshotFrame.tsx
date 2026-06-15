@@ -19,7 +19,7 @@ export default function ScreenshotFrame({
   priority = false,
   className,
 }: ScreenshotFrameProps) {
-  const wrapper = `relative overflow-hidden bg-zinc-50 ${className ?? ""}`;
+  const wrapper = `relative overflow-hidden bg-ink/[0.03] ${className ?? ""}`;
 
   if (shot.type === "image" && shot.src) {
     return (
@@ -50,7 +50,7 @@ export default function ScreenshotFrame({
         className="absolute inset-0 opacity-[0.5]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(10,10,11,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(10,10,11,0.035) 1px, transparent 1px)",
+            "linear-gradient(to right, rgb(var(--ink) / 0.035) 1px, transparent 1px), linear-gradient(to bottom, rgb(var(--ink) / 0.035) 1px, transparent 1px)",
           backgroundSize: "26px 26px",
         }}
       />

@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./app/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -9,11 +10,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Variable-driven so the whole palette flips with the `.dark` class.
         ink: {
-          DEFAULT: "#0a0a0b",
-          soft: "#1c1c1f",
-          muted: "#52525b",
+          DEFAULT: "rgb(var(--ink) / <alpha-value>)",
+          soft: "rgb(var(--ink-soft) / <alpha-value>)",
+          muted: "rgb(var(--ink-muted) / <alpha-value>)",
         },
+        // Page background and raised surfaces (cards, header, inputs).
+        canvas: "rgb(var(--canvas) / <alpha-value>)",
+        surface: "rgb(var(--surface) / <alpha-value>)",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)", "ui-sans-serif", "system-ui", "sans-serif"],

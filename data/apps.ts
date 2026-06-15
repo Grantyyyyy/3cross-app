@@ -130,7 +130,7 @@ export const apps: AppEntry[] = [
     tagline:
       "Construction operations platform consolidating pricing, vendors, projects, and field workflows.",
     category: "Internal Tool",
-    status: "Live",
+    status: "In Development",
     accent: "#7c3aed",
     monogram: "BB",
     link: "https://internal.buffalobuiltusa.com",

@@ -64,7 +64,7 @@ export default function CatalogBrowser({
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search apps, tech, descriptions…"
             aria-label="Search apps"
-            className="w-full rounded-xl border border-ink/[0.08] bg-white py-2.5 pl-10 pr-4 text-sm text-ink shadow-subtle outline-none transition placeholder:text-ink-muted/70 focus:border-ink/20"
+            className="w-full rounded-xl border border-ink/[0.08] bg-surface py-2.5 pl-10 pr-4 text-sm text-ink shadow-subtle outline-none transition placeholder:text-ink-muted/70 focus:border-ink/20"
           />
         </div>
 
@@ -152,7 +152,7 @@ function FilterGroup({
             aria-pressed={active}
             className={`rounded-full px-3 py-1 text-[13px] font-medium transition ${
               active
-                ? "bg-ink text-white"
+                ? "bg-ink text-canvas"
                 : "text-ink-muted hover:bg-ink/[0.04] hover:text-ink"
             }`}
           >

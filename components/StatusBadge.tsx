@@ -15,7 +15,7 @@ const RING: Record<AppStatus, string> = {
 /** Minimal status pill: a haloed dot + muted label. */
 export default function StatusBadge({ status }: { status: AppStatus }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-ink/[0.08] bg-white px-2.5 py-1 text-[12px] font-medium text-ink-soft">
+    <span className="inline-flex items-center gap-2 rounded-full border border-ink/[0.08] bg-surface px-2.5 py-1 text-[12px] font-medium text-ink-soft">
       <span className={`h-1.5 w-1.5 rounded-full ${DOT[status]} ${RING[status]}`} />
       {status}
     </span>
