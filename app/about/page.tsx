@@ -38,24 +38,6 @@ export default function AboutPage() {
 
       <hr className="my-12 border-ink/[0.08]" />
 
-      <h2 className="eyebrow mb-5">How it&apos;s built</h2>
-      <p className="text-[15px] leading-relaxed text-ink-muted text-pretty">
-        A statically generated Next.js (App Router) application styled with Tailwind
-        CSS and written in TypeScript. Every listing is generated at build time from
-        a single typed data file, so adding or updating an app is a one-file change.
-      </p>
-      <dl className="mt-6 space-y-4">
-        <DefItem term="data/apps.ts">
-          The single source of truth for every listing.
-        </DefItem>
-        <DefItem term="/ · /apps/[slug] · /about">
-          Catalog index, per-app detail pages, and this page.
-        </DefItem>
-        <DefItem term="Metadata API">
-          Per-page titles, descriptions, and Open Graph tags for SEO.
-        </DefItem>
-      </dl>
-
       <div className="mt-14">
         <Link
           href="/"

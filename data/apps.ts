@@ -10,6 +10,8 @@
  *   • status — set per the real deployment state.
  *   • link   — add the production URL once each app is deployed
  *              (leave "" for "Not yet deployed").
+ *
+ * Order: BB (Buffalo Built) apps first, then SS (Seasonal Services), then the rest.
  */
 
 export type AppStatus = "Live" | "In Development" | "Maintenance";
@@ -36,6 +38,8 @@ export interface AppEntry {
   monogram: string;
   /** Optional brand logo (path under /public). Renders in place of the monogram. */
   icon?: string;
+  /** Optional dark-mode variant of `icon` (e.g. a white logo). */
+  iconDark?: string;
   /** Production launch URL. "" => "Not yet deployed". */
   link: string;
   /** Sibling repository folder under ~/work (for local reference). */
@@ -89,46 +93,6 @@ export const apps: AppEntry[] = [
     ],
   },
   {
-    slug: "ss-lawnops",
-    name: "SS Lawnops",
-    tagline:
-      "Field-service operations for lawn-care businesses — dispatch, track, and report in real time.",
-    category: "Field Service",
-    status: "Live",
-    accent: "#16a34a",
-    monogram: "SS",
-    icon: "/lawnops-img/lawnops-icon.webp",
-    link: "https://lawnops.buffalobuiltusa.com",
-    repo: "ss_lawnops_clone",
-    description:
-      "SS Lawnops is a field-service management platform for lawn-care and landscaping " +
-      "operations. Dispatchers schedule one-off and recurring jobs and assign them to " +
-      "crews; crew members clock in/out, view assignments, and upload before/after photos " +
-      "from the field; and admins track completion, revenue, and service history across " +
-      "every client.",
-    features: [
-      "Job scheduling and crew dispatch with real-time status (scheduled, in progress, completed, skipped)",
-      "Crew clock in/out time tracking with automatic duration and timecards",
-      "Recurring schedule generation that auto-creates job instances",
-      "Client and service management with contract vs. à-la-carte pricing",
-      "On-site photo capture for before/after work documentation",
-      "Revenue and service reporting with CSV export and Twilio SMS “on the way” alerts",
-    ],
-    techStack: [
-      "Laravel 13",
-      "React 19",
-      "Inertia.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Radix UI",
-      "Twilio",
-    ],
-    screenshots: [
-      { type: "image", src: "/screenshots/lawnops-lawn.webp", label: "On-site job photo" },
-      { type: "image", src: "/screenshots/lawnops-jobsite.webp", label: "On-site job photo" },
-    ],
-  },
-  {
     slug: "bb-internal",
     name: "BB Internal",
     tagline:
@@ -169,6 +133,111 @@ export const apps: AppEntry[] = [
     ],
   },
   {
+    slug: "buffalo-built",
+    name: "Buffalo Built",
+    tagline:
+      "Design-build home builder and general contractor in Buffalo, WY — build, plan, or remodel with one team.",
+    category: "Marketing Site",
+    status: "Live",
+    accent: "#1e3a8a",
+    monogram: "BB",
+    icon: "/bb-llc/bb-llc-logo-black.webp",
+    iconDark: "/bb-llc/bb-llc-logo-white.webp",
+    link: "https://buffalobuiltllc.vercel.app",
+    repo: "",
+    description:
+      "Buffalo Built is the marketing and lead-generation website for Buffalo Built LLC, " +
+      "a design-build general contractor and home builder serving Buffalo, Sheridan, and " +
+      "the greater Big Horn County region of Wyoming. Visitors explore home models, browse " +
+      "recent builds and remodels, learn the build process, estimate budgets, and request " +
+      "consultations — all positioned around one accountable team handling design, " +
+      "construction, and finishes from start to finish.",
+    features: [
+      "Home-model showcase (Steadfast Cabin, Cornerstone Cottage, Providence Ranch, Legacy Lodge) with compare and tour requests",
+      "Build, plan, and remodel service lines spanning residential and commercial work",
+      "Step-by-step “How it works” journey: choose, customize, finance, build, move in",
+      "Budget estimator / cost calculator and financing guidance",
+      "Project gallery of recent builds and remodels",
+      "Location landing pages (Buffalo, Sheridan, Big Horn County), a learn/blog section, and consultation requests",
+    ],
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    screenshots: [
+      { type: "image", src: "/bb-llc/header-bb-llc.webp", label: "Buffalo Built, Wyoming" },
+    ],
+  },
+  {
+    slug: "ss-lawnops",
+    name: "SS Lawnops",
+    tagline:
+      "Field-service operations for lawn-care businesses — dispatch, track, and report in real time.",
+    category: "Field Service",
+    status: "Live",
+    accent: "#16a34a",
+    monogram: "SS",
+    icon: "/lawnops-img/lawnops-icon.webp",
+    link: "https://lawnops.buffalobuiltusa.com",
+    repo: "ss_lawnops_clone",
+    description:
+      "SS Lawnops is a field-service management platform for lawn-care and landscaping " +
+      "operations. Dispatchers schedule one-off and recurring jobs and assign them to " +
+      "crews; crew members clock in/out, view assignments, and upload before/after photos " +
+      "from the field; and admins track completion, revenue, and service history across " +
+      "every client.",
+    features: [
+      "Job scheduling and crew dispatch with real-time status (scheduled, in progress, completed, skipped)",
+      "Crew clock in/out time tracking with automatic duration and timecards",
+      "Recurring schedule generation that auto-creates job instances",
+      "Client and service management with contract vs. à-la-carte pricing",
+      "On-site photo capture for before/after work documentation",
+      "Revenue and service reporting with CSV export and Twilio SMS “on the way” alerts",
+    ],
+    techStack: [
+      "Laravel 13",
+      "React 19",
+      "Inertia.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Radix UI",
+      "Twilio",
+    ],
+    screenshots: [
+      { type: "image", src: "/screenshots/lawnops-lawn.webp", label: "On-site job photo" },
+      { type: "image", src: "/screenshots/lawnops-jobsite.webp", label: "On-site job photo" },
+    ],
+  },
+  {
+    slug: "seasonal-services-website",
+    name: "Seasonal Services Website",
+    tagline:
+      "Marketing site for Seasonal Services — custom landscaping & professional lawn care.",
+    category: "Marketing Site",
+    status: "Live",
+    accent: "#0f766e",
+    monogram: "SS",
+    icon: "/lawnops-img/lawnops-icon.webp",
+    link: "https://www.seasonalservices365.com",
+    repo: "ss_website_revamp",
+    description:
+      "A rebuilt marketing website for Seasonal Services LLC, a family-owned landscaping " +
+      "and property-maintenance company serving residential, commercial, HOA, and " +
+      "municipal clients across the Buffalo–Sheridan region of Wyoming. The site showcases " +
+      "service lines and packages, location-specific landing pages, a 3D landscape-design " +
+      "showcase, and an MDX-powered blog, with SEO structured data throughout.",
+    features: [
+      "Six service lines with expandable sub-services and detail pages",
+      "Three tiered service packages (Basic, Standard, Premium) with CTAs",
+      "3D landscape-design showcase highlighting pre-build renders",
+      "Location landing pages for Buffalo, Sheridan, and nearby Wyoming cities",
+      "Audience-specific pages (residential, commercial, HOA, municipal, new builds)",
+      "MDX content blog with JSON-LD SEO and an auto-generated sitemap",
+    ],
+    techStack: ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "MDX", "GSAP"],
+    screenshots: [
+      { type: "image", src: "/screenshots/seasonal-frontyard.webp", label: "Portfolio project" },
+      { type: "image", src: "/screenshots/seasonal-aerial.webp", label: "Landscape design" },
+    ],
+  },
+  {
     slug: "worklog",
     name: "Worklog",
     tagline:
@@ -205,38 +274,6 @@ export const apps: AppEntry[] = [
     screenshots: [
       { type: "mock", label: "Time-entry view" },
       { type: "mock", label: "Hours dashboard" },
-    ],
-  },
-  {
-    slug: "seasonal-services-website",
-    name: "Seasonal Services Website",
-    tagline:
-      "Marketing site for Seasonal Services — custom landscaping & professional lawn care.",
-    category: "Marketing Site",
-    status: "Live",
-    accent: "#0f766e",
-    monogram: "SS",
-    icon: "/lawnops-img/lawnops-icon.webp",
-    link: "https://www.seasonalservices365.com",
-    repo: "ss_website_revamp",
-    description:
-      "A rebuilt marketing website for Seasonal Services LLC, a family-owned landscaping " +
-      "and property-maintenance company serving residential, commercial, HOA, and " +
-      "municipal clients across the Buffalo–Sheridan region of Wyoming. The site showcases " +
-      "service lines and packages, location-specific landing pages, a 3D landscape-design " +
-      "showcase, and an MDX-powered blog, with SEO structured data throughout.",
-    features: [
-      "Six service lines with expandable sub-services and detail pages",
-      "Three tiered service packages (Basic, Standard, Premium) with CTAs",
-      "3D landscape-design showcase highlighting pre-build renders",
-      "Location landing pages for Buffalo, Sheridan, and nearby Wyoming cities",
-      "Audience-specific pages (residential, commercial, HOA, municipal, new builds)",
-      "MDX content blog with JSON-LD SEO and an auto-generated sitemap",
-    ],
-    techStack: ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "MDX", "GSAP"],
-    screenshots: [
-      { type: "image", src: "/screenshots/seasonal-frontyard.webp", label: "Portfolio project" },
-      { type: "image", src: "/screenshots/seasonal-aerial.webp", label: "Landscape design" },
     ],
   },
   {

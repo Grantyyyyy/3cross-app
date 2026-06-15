@@ -30,6 +30,7 @@ export default function AppCard({ app }: { app: AppEntry }) {
             monogram={app.monogram}
             accent={app.accent}
             icon={app.icon}
+            iconDark={app.iconDark}
             name={app.name}
             className="h-10 w-10 text-[15px]"
           />

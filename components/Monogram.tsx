@@ -5,6 +5,8 @@ interface MonogramProps {
   accent: string;
   /** Optional brand logo (path under /public). Renders instead of the monogram. */
   icon?: string;
+  /** Optional dark-mode variant of `icon` (e.g. a white logo). */
+  iconDark?: string;
   /** App name, used for the icon's alt text. */
   name?: string;
   /** Tailwind size + text classes, e.g. "h-12 w-12 text-lg". */
@@ -19,6 +21,7 @@ export default function Monogram({
   monogram,
   accent,
   icon,
+  iconDark,
   name,
   className,
 }: MonogramProps) {
@@ -27,15 +30,25 @@ export default function Monogram({
   }`;
 
   if (icon) {
+    const alt = name ? `${name} logo` : "";
     return (
       <span className={`relative ${base}`}>
         <Image
           src={icon}
-          alt={name ? `${name} logo` : ""}
+          alt={alt}
           fill
           sizes="80px"
-          className="object-cover"
+          className={`object-contain ${iconDark ? "dark:hidden" : ""}`}
         />
+        {iconDark && (
+          <Image
+            src={iconDark}
+            alt={alt}
+            fill
+            sizes="80px"
+            className="hidden object-contain dark:block"
+          />
+        )}
       </span>
     );
   }

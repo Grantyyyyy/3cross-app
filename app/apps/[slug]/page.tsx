@@ -67,6 +67,7 @@ export default async function AppDetailPage({
                 monogram={app.monogram}
                 accent={app.accent}
                 icon={app.icon}
+                iconDark={app.iconDark}
                 name={app.name}
                 className="h-16 w-16 text-2xl"
               />
