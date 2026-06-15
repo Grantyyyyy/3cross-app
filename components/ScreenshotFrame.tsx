@@ -3,7 +3,7 @@ import type { AppEntry, Screenshot } from "@/data/apps";
 
 interface ScreenshotFrameProps {
   shot: Screenshot;
-  app: Pick<AppEntry, "monogram" | "accent" | "name">;
+  app: Pick<AppEntry, "monogram" | "accent" | "name" | "icon">;
   /** Pass true when the image is above the fold (e.g. card banner / hero). */
   priority?: boolean;
   className?: string;
@@ -55,16 +55,28 @@ export default function ScreenshotFrame({
         }}
       />
       <div className="relative flex flex-col items-center gap-3 text-center">
-        <span
-          className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-xl font-semibold tracking-tight"
-          style={{
-            color: app.accent,
-            backgroundColor: `${app.accent}16`,
-            boxShadow: `inset 0 0 0 1px ${app.accent}26`,
-          }}
-        >
-          {app.monogram}
-        </span>
+        {app.icon ? (
+          <span className="relative inline-flex h-14 w-14 overflow-hidden rounded-2xl">
+            <Image
+              src={app.icon}
+              alt={`${app.name} logo`}
+              fill
+              sizes="56px"
+              className="object-cover"
+            />
+          </span>
+        ) : (
+          <span
+            className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-xl font-semibold tracking-tight"
+            style={{
+              color: app.accent,
+              backgroundColor: `${app.accent}16`,
+              boxShadow: `inset 0 0 0 1px ${app.accent}26`,
+            }}
+          >
+            {app.monogram}
+          </span>
+        )}
         <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted">
           {shot.label}
         </span>

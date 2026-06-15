@@ -66,6 +66,8 @@ export default async function AppDetailPage({
               <Monogram
                 monogram={app.monogram}
                 accent={app.accent}
+                icon={app.icon}
+                name={app.name}
                 className="h-16 w-16 text-2xl"
               />
               <div>
@@ -174,12 +176,7 @@ export default async function AppDetailPage({
             <Row label="Category" divider>
               <span className="text-sm font-medium text-ink">{app.category}</span>
             </Row>
-            <Row label="Repository" divider>
-              <code className="rounded-md bg-ink/[0.04] px-1.5 py-0.5 font-mono text-[12px] text-ink-soft">
-                {app.repo}
-              </code>
-            </Row>
-            <Row label="Access" divider>
+            <Row label="Link" divider>
               {app.link ? (
                 <a
                   href={app.link}
@@ -187,7 +184,7 @@ export default async function AppDetailPage({
                   rel="noopener noreferrer"
                   className="text-sm font-medium text-ink underline-offset-4 hover:underline"
                 >
-                  Live ↗
+                  {app.link.replace(/^https?:\/\//, "").replace(/\/$/, "")} ↗
                 </a>
               ) : (
                 <span className="text-sm text-ink-muted">Not deployed</span>

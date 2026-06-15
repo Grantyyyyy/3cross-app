@@ -29,6 +29,8 @@ export default function AppCard({ app }: { app: AppEntry }) {
           <Monogram
             monogram={app.monogram}
             accent={app.accent}
+            icon={app.icon}
+            name={app.name}
             className="h-10 w-10 text-[15px]"
           />
           <div className="min-w-0">

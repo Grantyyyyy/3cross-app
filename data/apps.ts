@@ -17,7 +17,7 @@ export type AppStatus = "Live" | "In Development" | "Maintenance";
 export interface Screenshot {
   /** "image" renders a real file from /public; "mock" renders a branded placeholder. */
   type: "image" | "mock";
-  /** Path under /public, e.g. "/screenshots/foo.png". Required when type === "image". */
+  /** Path under /public, e.g. "/screenshots/foo.webp". Required when type === "image". */
   src?: string;
   label: string;
 }
@@ -32,8 +32,10 @@ export interface AppEntry {
   status: AppStatus;
   /** Brand color (hex) used for the monogram tile and accents. */
   accent: string;
-  /** 1–2 letters shown in the logo tile. */
+  /** 1–2 letters shown in the logo tile (fallback when `icon` is absent). */
   monogram: string;
+  /** Optional brand logo (path under /public). Renders in place of the monogram. */
+  icon?: string;
   /** Production launch URL. "" => "Not yet deployed". */
   link: string;
   /** Sibling repository folder under ~/work (for local reference). */
@@ -55,6 +57,7 @@ export const apps: AppEntry[] = [
     status: "Live",
     accent: "#2563eb",
     monogram: "BB",
+    icon: "/bb-internal/bb-icon.webp",
     link: "https://bb-lite.buffalobuiltusa.com",
     repo: "bb-homebuyer-lite-clone",
     description:
@@ -81,8 +84,8 @@ export const apps: AppEntry[] = [
       "Stripe",
     ],
     screenshots: [
-      { type: "image", src: "/screenshots/bbh-home.png", label: "Buyer-facing home" },
-      { type: "image", src: "/screenshots/bbh-portfolio.png", label: "Property portfolio" },
+      { type: "image", src: "/screenshots/bbh-home.webp", label: "Buyer-facing home" },
+      { type: "image", src: "/screenshots/bbh-portfolio.webp", label: "Property portfolio" },
     ],
   },
   {
@@ -94,6 +97,7 @@ export const apps: AppEntry[] = [
     status: "Live",
     accent: "#16a34a",
     monogram: "SS",
+    icon: "/lawnops-img/lawnops-icon.webp",
     link: "https://lawnops.buffalobuiltusa.com",
     repo: "ss_lawnops_clone",
     description:
@@ -120,8 +124,8 @@ export const apps: AppEntry[] = [
       "Twilio",
     ],
     screenshots: [
-      { type: "image", src: "/screenshots/lawnops-lawn.jpg", label: "On-site job photo" },
-      { type: "image", src: "/screenshots/lawnops-jobsite.jpg", label: "On-site job photo" },
+      { type: "image", src: "/screenshots/lawnops-lawn.webp", label: "On-site job photo" },
+      { type: "image", src: "/screenshots/lawnops-jobsite.webp", label: "On-site job photo" },
     ],
   },
   {
@@ -133,6 +137,7 @@ export const apps: AppEntry[] = [
     status: "In Development",
     accent: "#7c3aed",
     monogram: "BB",
+    icon: "/bb-internal/bb-icon.webp",
     link: "https://internal.buffalobuiltusa.com",
     repo: "bb-internal-clone",
     description:
@@ -211,6 +216,7 @@ export const apps: AppEntry[] = [
     status: "Live",
     accent: "#0f766e",
     monogram: "SS",
+    icon: "/lawnops-img/lawnops-icon.webp",
     link: "https://www.seasonalservices365.com",
     repo: "ss_website_revamp",
     description:
@@ -229,8 +235,37 @@ export const apps: AppEntry[] = [
     ],
     techStack: ["Next.js 15", "React", "TypeScript", "Tailwind CSS", "MDX", "GSAP"],
     screenshots: [
-      { type: "image", src: "/screenshots/seasonal-frontyard.jpg", label: "Portfolio project" },
-      { type: "image", src: "/screenshots/seasonal-aerial.jpg", label: "Landscape design" },
+      { type: "image", src: "/screenshots/seasonal-frontyard.webp", label: "Portfolio project" },
+      { type: "image", src: "/screenshots/seasonal-aerial.webp", label: "Landscape design" },
+    ],
+  },
+  {
+    slug: "three-cross",
+    name: "Three Cross",
+    tagline:
+      "Company website for 3Cross, in active development on WordPress.",
+    category: "Marketing Site",
+    status: "In Development",
+    accent: "#be123c",
+    monogram: "3C",
+    link: "https://three-cross.buffalobuiltusa.com",
+    repo: "",
+    description:
+      "Three Cross is the company website for client 3Cross, currently in active " +
+      "development. It is being built on WordPress so the team can manage their own " +
+      "pages, posts, and media without developer involvement. The production domain is " +
+      "live with the initial install and the Twenty Twenty-Five block theme; content, " +
+      "branding, and the final page structure are still being built out.",
+    features: [
+      "Self-managed content through the WordPress admin (pages, posts, media)",
+      "Block-based page building on the Twenty Twenty-Five theme",
+      "Built-in blog with categories, tags, and comments",
+      "Responsive, SEO-friendly WordPress foundation",
+    ],
+    techStack: ["WordPress", "PHP", "MySQL", "Twenty Twenty-Five"],
+    screenshots: [
+      { type: "mock", label: "Home" },
+      { type: "mock", label: "Blog" },
     ],
   },
 ];
