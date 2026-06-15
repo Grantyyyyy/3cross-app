@@ -5,15 +5,20 @@ interface MonogramProps {
   className?: string;
 }
 
-/** Brand tile showing an app's 1–2 letter monogram on its accent color. */
+/**
+ * Brand tile — a soft tinted square with the app's monogram in its accent color.
+ * Tinted rather than saturated for a more refined, minimal feel.
+ */
 export default function Monogram({ monogram, accent, className }: MonogramProps) {
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-xl font-semibold text-white shadow-sm ${
+      className={`inline-flex shrink-0 items-center justify-center rounded-[0.7em] font-semibold tracking-tight ${
         className ?? "h-12 w-12 text-lg"
       }`}
       style={{
-        background: `linear-gradient(135deg, ${accent}, ${accent}cc)`,
+        color: accent,
+        backgroundColor: `${accent}14`,
+        boxShadow: `inset 0 0 0 1px ${accent}24`,
       }}
       aria-hidden="true"
     >

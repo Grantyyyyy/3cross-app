@@ -52,10 +52,10 @@ export const apps: AppEntry[] = [
     tagline:
       "Real-estate CRM for custom home builders — capture leads, schedule tours, collect deposits.",
     category: "Real Estate CRM",
-    status: "In Development",
+    status: "Live",
     accent: "#2563eb",
     monogram: "BB",
-    link: "",
+    link: "https://bb-lite.buffalobuiltusa.com",
     repo: "bb-homebuyer-lite-clone",
     description:
       "BB Homebuyer is a lead-management and sales platform for custom home builders. " +
@@ -91,10 +91,10 @@ export const apps: AppEntry[] = [
     tagline:
       "Field-service operations for lawn-care businesses — dispatch, track, and report in real time.",
     category: "Field Service",
-    status: "In Development",
+    status: "Live",
     accent: "#16a34a",
     monogram: "SS",
-    link: "",
+    link: "https://lawnops.buffalobuiltusa.com",
     repo: "ss_lawnops_clone",
     description:
       "SS Lawnops is a field-service management platform for lawn-care and landscaping " +
@@ -130,10 +130,10 @@ export const apps: AppEntry[] = [
     tagline:
       "Construction operations platform consolidating pricing, vendors, projects, and field workflows.",
     category: "Internal Tool",
-    status: "In Development",
+    status: "Live",
     accent: "#7c3aed",
     monogram: "BB",
-    link: "",
+    link: "https://internal.buffalobuiltusa.com",
     repo: "bb-internal-clone",
     description:
       "BB Internal is the back-office operations platform for a custom home builder, built " +
@@ -169,10 +169,10 @@ export const apps: AppEntry[] = [
     tagline:
       "Team time-tracking and worklog management with real-time dashboards and allocation analytics.",
     category: "Time Tracking",
-    status: "In Development",
+    status: "Live",
     accent: "#ea580c",
     monogram: "WL",
-    link: "",
+    link: "https://worklog.buffalobuiltusa.com",
     repo: "3cross-worklog",
     description:
       "Worklog is a team time-tracking and worklog application. Members log hours against " +

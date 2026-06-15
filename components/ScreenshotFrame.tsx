@@ -10,8 +10,8 @@ interface ScreenshotFrameProps {
 }
 
 /**
- * Renders a real screenshot, or — for `type: "mock"` entries — a branded
- * gradient placeholder so apps without UI imagery still look intentional.
+ * Renders a real screenshot, or — for `type: "mock"` entries — a refined branded
+ * placeholder so apps without UI imagery still look intentional.
  */
 export default function ScreenshotFrame({
   shot,
@@ -19,7 +19,7 @@ export default function ScreenshotFrame({
   priority = false,
   className,
 }: ScreenshotFrameProps) {
-  const wrapper = `relative overflow-hidden ${className ?? ""}`;
+  const wrapper = `relative overflow-hidden bg-zinc-50 ${className ?? ""}`;
 
   if (shot.type === "image" && shot.src) {
     return (
@@ -40,19 +40,34 @@ export default function ScreenshotFrame({
     <div
       className={`${wrapper} flex items-center justify-center`}
       style={{
-        background: `linear-gradient(135deg, ${app.accent}22, ${app.accent}0a)`,
+        background: `radial-gradient(120% 120% at 50% 0%, ${app.accent}12, transparent 70%)`,
       }}
       role="img"
       aria-label={`${app.name} — ${shot.label} (placeholder)`}
     >
-      <div className="flex flex-col items-center gap-2 text-center">
+      {/* faint grid */}
+      <div
+        className="absolute inset-0 opacity-[0.5]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(10,10,11,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(10,10,11,0.035) 1px, transparent 1px)",
+          backgroundSize: "26px 26px",
+        }}
+      />
+      <div className="relative flex flex-col items-center gap-3 text-center">
         <span
-          className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-xl font-semibold text-white shadow-sm"
-          style={{ background: `linear-gradient(135deg, ${app.accent}, ${app.accent}cc)` }}
+          className="inline-flex h-14 w-14 items-center justify-center rounded-2xl text-xl font-semibold tracking-tight"
+          style={{
+            color: app.accent,
+            backgroundColor: `${app.accent}16`,
+            boxShadow: `inset 0 0 0 1px ${app.accent}26`,
+          }}
         >
           {app.monogram}
         </span>
-        <span className="text-sm font-medium text-slate-500">{shot.label}</span>
+        <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted">
+          {shot.label}
+        </span>
       </div>
     </div>
   );
