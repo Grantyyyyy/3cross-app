@@ -48,6 +48,8 @@ export interface AppEntry {
   description: string;
   features: string[];
   techStack: string[];
+  /** Optional banner image (path under /public) for the catalog card. Falls back to screenshots[0]. */
+  cardImage?: string;
   screenshots: Screenshot[];
 }
 
@@ -87,9 +89,10 @@ export const apps: AppEntry[] = [
       "Tailwind CSS",
       "Stripe",
     ],
+    cardImage: "/screenshots/bbh-home.webp",
     screenshots: [
-      { type: "image", src: "/screenshots/bbh-home.webp", label: "Buyer-facing home" },
-      { type: "image", src: "/screenshots/bbh-portfolio.webp", label: "Property portfolio" },
+      { type: "image", src: "/bbh/bbh-prev1.webp", label: "Featured property" },
+      { type: "image", src: "/bbh/bbh-prev2.webp", label: "Featured property" },
     ],
   },
   {
@@ -161,8 +164,10 @@ export const apps: AppEntry[] = [
       "Location landing pages (Buffalo, Sheridan, Big Horn County), a learn/blog section, and consultation requests",
     ],
     techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel"],
+    cardImage: "/bb-llc/header-bb-llc.webp",
     screenshots: [
-      { type: "image", src: "/bb-llc/header-bb-llc.webp", label: "Buffalo Built, Wyoming" },
+      { type: "image", src: "/bb-llc/bb-prev1.webp", label: "Completed build — living space" },
+      { type: "image", src: "/bb-llc/bb-prev2.webp", label: "Completed build — bathroom" },
     ],
   },
   {
@@ -200,9 +205,10 @@ export const apps: AppEntry[] = [
       "Radix UI",
       "Twilio",
     ],
+    cardImage: "/screenshots/lawnops-lawn.webp",
     screenshots: [
-      { type: "image", src: "/screenshots/lawnops-lawn.webp", label: "On-site job photo" },
-      { type: "image", src: "/screenshots/lawnops-jobsite.webp", label: "On-site job photo" },
+      { type: "image", src: "/ssl/ss-prev1.webp", label: "On-site job photo" },
+      { type: "image", src: "/ssl/ss-prev2.webp", label: "On-site job photo" },
     ],
   },
   {

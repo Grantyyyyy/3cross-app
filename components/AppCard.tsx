@@ -1,10 +1,14 @@
 import Link from "next/link";
-import type { AppEntry } from "@/data/apps";
+import type { AppEntry, Screenshot } from "@/data/apps";
 import Monogram from "@/components/Monogram";
 import StatusBadge from "@/components/StatusBadge";
 import ScreenshotFrame from "@/components/ScreenshotFrame";
 
 export default function AppCard({ app }: { app: AppEntry }) {
+  const preview: Screenshot = app.cardImage
+    ? { type: "image", src: app.cardImage, label: app.name }
+    : app.screenshots[0];
+
   return (
     <Link
       href={`/apps/${app.slug}`}
@@ -13,7 +17,7 @@ export default function AppCard({ app }: { app: AppEntry }) {
       {/* Preview */}
       <div className="relative overflow-hidden">
         <ScreenshotFrame
-          shot={app.screenshots[0]}
+          shot={preview}
           app={app}
           className="aspect-[16/10] w-full transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
