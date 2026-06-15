@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://buffalobuiltusa.com"),
   title: {
-    default: "3Cross App Catalog",
+    default: "3Cross Directory Website",
     template: "%s · 3Cross",
   },
   description:

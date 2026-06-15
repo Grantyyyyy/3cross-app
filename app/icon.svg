@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="14" fill="#0A0A0B"/>
+  <g fill="#FFFFFF">
+    <!-- left cross -->
+    <rect x="16.4" y="24" width="3.2" height="22" rx="0.4"/>
+    <rect x="13" y="29" width="10" height="3.2" rx="0.4"/>
+    <!-- center cross (taller) -->
+    <rect x="30.2" y="16" width="3.6" height="30" rx="0.4"/>
+    <rect x="25" y="23" width="14" height="3.6" rx="0.4"/>
+    <!-- right cross -->
+    <rect x="44.4" y="24" width="3.2" height="22" rx="0.4"/>
+    <rect x="41" y="29" width="10" height="3.2" rx="0.4"/>
+  </g>
+</svg>
