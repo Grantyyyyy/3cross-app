@@ -215,7 +215,7 @@ export const apps: AppEntry[] = [
     accent: "#0f766e",
     monogram: "SS",
     icon: "/lawnops-img/lawnops-icon.webp",
-    link: "https://www.seasonalservices365.com",
+    link: "https://seasonalservices365.vercel.app",
     repo: "ss_website_revamp",
     description:
       "A rebuilt marketing website for Seasonal Services LLC, a family-owned landscaping " +
