@@ -156,20 +156,6 @@ export default async function AppDetailPage({
 
         {/* Sidebar */}
         <aside className="space-y-8 lg:sticky lg:top-24 lg:self-start">
-          <div>
-            <h2 className="eyebrow mb-4">Tech stack</h2>
-            <ul className="flex flex-wrap gap-1.5">
-              {app.techStack.map((tech) => (
-                <li
-                  key={tech}
-                  className="rounded-lg border border-ink/[0.08] bg-surface px-2.5 py-1 font-mono text-[12px] text-ink-soft"
-                >
-                  {tech}
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <dl className="rounded-2xl border border-ink/[0.08] bg-surface p-5 shadow-subtle">
             <Row label="Status">
               <StatusBadge status={app.status} />

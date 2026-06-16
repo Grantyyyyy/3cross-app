@@ -33,12 +33,6 @@ export default function Header() {
           >
             Apps
           </Link>
-          <Link
-            href="/about"
-            className="rounded-full px-3.5 py-1.5 font-medium transition hover:bg-ink/[0.04] hover:text-ink"
-          >
-            About
-          </Link>
           <span className="mx-1 h-4 w-px bg-ink/10" aria-hidden="true" />
           <ThemeToggle />
         </nav>

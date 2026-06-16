@@ -29,9 +29,6 @@ export default function Footer() {
           <Link href="/" className="transition hover:text-ink">
             Apps
           </Link>
-          <Link href="/about" className="transition hover:text-ink">
-            About
-          </Link>
         </nav>
       </div>
     </footer>

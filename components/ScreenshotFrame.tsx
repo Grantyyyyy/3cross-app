@@ -6,6 +6,8 @@ interface ScreenshotFrameProps {
   app: Pick<AppEntry, "monogram" | "accent" | "name" | "icon">;
   /** Pass true when the image is above the fold (e.g. card banner / hero). */
   priority?: boolean;
+  /** Hide the caption inside the branded placeholder. */
+  hideLabel?: boolean;
   className?: string;
 }
 
@@ -17,6 +19,7 @@ export default function ScreenshotFrame({
   shot,
   app,
   priority = false,
+  hideLabel = false,
   className,
 }: ScreenshotFrameProps) {
   const wrapper = `relative overflow-hidden bg-ink/[0.03] ${className ?? ""}`;
@@ -77,9 +80,11 @@ export default function ScreenshotFrame({
             {app.monogram}
           </span>
         )}
-        <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted">
-          {shot.label}
-        </span>
+        {!hideLabel && (
+          <span className="font-mono text-[11px] uppercase tracking-[0.16em] text-ink-muted">
+            {shot.label}
+          </span>
+        )}
       </div>
     </div>
   );

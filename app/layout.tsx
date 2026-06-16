@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s · 3Cross",
   },
   description:
-    "A browsable directory of the web applications built for client 3Cross — for internal reference, client handoff, and portfolio use.",
+    "A browsable directory of the web applications built for client 3Cross — for internal reference and portfolio use.",
   keywords: ["3Cross", "app catalog", "web apps", "directory", "portfolio"],
   openGraph: {
     title: "3Cross App Catalog",

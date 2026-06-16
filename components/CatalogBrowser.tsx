@@ -6,23 +6,19 @@ import AppCard from "@/components/AppCard";
 
 interface CatalogBrowserProps {
   apps: AppEntry[];
-  categories: string[];
   statuses: AppStatus[];
 }
 
 export default function CatalogBrowser({
   apps,
-  categories,
   statuses,
 }: CatalogBrowserProps) {
   const [query, setQuery] = useState("");
-  const [category, setCategory] = useState<string>("All");
   const [status, setStatus] = useState<string>("All");
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return apps.filter((app) => {
-      if (category !== "All" && app.category !== category) return false;
       if (status !== "All" && app.status !== status) return false;
       if (!q) return true;
       const haystack = [
@@ -36,9 +32,9 @@ export default function CatalogBrowser({
         .toLowerCase();
       return haystack.includes(q);
     });
-  }, [apps, query, category, status]);
+  }, [apps, query, status]);
 
-  const dirty = category !== "All" || status !== "All" || query !== "";
+  const dirty = status !== "All" || query !== "";
 
   return (
     <div>
@@ -71,12 +67,6 @@ export default function CatalogBrowser({
         {/* Filters */}
         <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
           <FilterGroup
-            label="Category"
-            value={category}
-            options={["All", ...categories]}
-            onChange={setCategory}
-          />
-          <FilterGroup
             label="Status"
             value={status}
             options={["All", ...statuses]}
@@ -95,7 +85,6 @@ export default function CatalogBrowser({
           <button
             onClick={() => {
               setQuery("");
-              setCategory("All");
               setStatus("All");
             }}
             className="text-sm font-medium text-ink-muted underline-offset-4 transition hover:text-ink hover:underline"
